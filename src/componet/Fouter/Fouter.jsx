@@ -42,7 +42,7 @@ function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-500 mt-6 pt-6 text-center w-full text-black">
           <p className="text-sm  text-black">
-            &copy; {new Date().getFullYear()} DevUI. All rights Milan.
+            &copy; {new Date().getFullYear()}  All rights Milan Nang.
           </p>
         </div>
       </div>
