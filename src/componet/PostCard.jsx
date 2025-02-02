@@ -27,7 +27,7 @@ function PostCard({$id,title,featuredimage,content,showContent}) {
     </Link>
   )
 
-} 
+} //my code
 
 
 
