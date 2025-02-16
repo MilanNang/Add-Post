@@ -1,9 +1,9 @@
-import React,{useState,useEffect,}from 'react'
-import { useSelector ,} from 'react-redux';
-import { Link, useNavigate, useParams } from "react-router-dom";
-import {Button,Container} from '../componet/Index'
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Button, Container } from '../componet/Index';
 import parse from 'html-react-parser';
-import appwriteService from '../appwrite/config'
+import appwriteService from '../appwrite/config';
 
 export default function Post() {
     const [post, setPost] = useState(null);
@@ -13,7 +13,7 @@ export default function Post() {
     const userData = useSelector((state) => state.auth.userData);
 
     const isAuthor = post && userData ? post.userId === userData.$id : false;
-    //my code
+
     useEffect(() => {
         if (slug) {
             appwriteService.getPost(slug).then((post) => {
@@ -21,10 +21,7 @@ export default function Post() {
                 else navigate("/");
             });
         } else navigate("/");
-    }, [slug, navigate]);//end code
-
-
-
+    }, [slug, navigate]);
 
     const deletePost = () => {
         appwriteService.deletePost(post.$id).then((status) => {
@@ -33,42 +30,33 @@ export default function Post() {
                 navigate("/");
             }
         });
-    };//my code
-
-
+    };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-8 px-4 sm:px-0">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                <div className="w-full flex flex-col sm:flex-row justify-center mb-4 relative border rounded-xl p-2">
                     <img
                         src={appwriteService.getFilePreview(post.featuredimage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl w-full sm:w-auto"
                     />
-
+                </div>
+                <div className="w-full mb-6 flex flex-col sm:flex-row justify-center items-center sm:justify-between">
+                    <h1 className="text-xl sm:text-2xl font-bold text-center sm:text-left">{post.title}</h1>
                     {isAuthor && (
-                        <div className="absolute right-6 top-6">
+                        <div className="flex space-x-3 mt-4 sm:mt-0">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <button  className="mr-3 h-[40px] w-[90px] bg-[#7EC8E3] rounded-xl hover:bg-[#0000FF]">
-                                    Edit
-                                </button>
+                                <button className="bg-sky-400  h-[40px] w-[90px] rounded-xl hover:bg-sky-600">Edit</button>
                             </Link>
-                            <button className='h-[40px] w-[90px] bg-[#F85C70]  rounded-xl hover:bg-[#FF2511]' onClick={deletePost}>
-                                Delete
-                            </button>
+                            <button className='bg-red-400 h-[40px] w-[90px] rounded-xl hover:bg-red-600' onClick={deletePost}>Delete</button>
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
-                </div>
-                <div className="browser-css">
+                <div className="browser-css text-sm sm:text-base">
                     {parse(post.content)}
-                    </div>
+                </div>
             </Container>
         </div>
     ) : null;
 }
-
-

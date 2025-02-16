@@ -4,11 +4,11 @@ import Logo from "../Logo";
 
 function Footer() {
   return (
-    <footer className="w-full bg-[#bc6c25] text-white py-10">
+    <footer className="w-full bg-[#bc6c25] text-white py-6 sm:py-10">
       <div className="container mx-auto px-6 flex flex-col items-center">
         
-        {/* Content Wrapper */}
-        <div className="w-full flex justify-between items-center mb-6">
+        {/* Desktop View */}
+        <div className="hidden md:flex w-full justify-between items-center mb-6">
           {/* Logo (Left Side) */}
           <div className="mr-auto">
             <Logo width="120px" />
@@ -23,7 +23,6 @@ function Footer() {
               <ul className="space-y-3">
                 <li><Link to="/" className="hover:text-gray-300">Features</Link></li>
                 <li><Link to="/" className="hover:text-gray-300">Pricing</Link></li>
-               
               </ul>
             </div>
 
@@ -33,16 +32,20 @@ function Footer() {
               <ul className="space-y-3">
                 <li><Link to="/" className="hover:text-gray-300">Help Center</Link></li>
                 <li><Link to="/" className="hover:text-gray-300">FAQs</Link></li>
-               
               </ul>
             </div>
           </div>
         </div>
 
+        {/* Mobile View - Only Logo & Copyright */}
+        <div className="w-full flex flex-col items-center md:hidden">
+          <Logo width="80px" />
+        </div>
+
         {/* Copyright */}
-        <div className="border-t border-gray-500 mt-6 pt-6 text-center w-full text-black">
-          <p className="text-sm  text-black">
-            &copy; {new Date().getFullYear()}  All rights Milan Nang.
+        <div className="border-t border-gray-500 mt-6 pt-4 text-center w-full">
+          <p className="text-sm text-black">
+            &copy; {new Date().getFullYear()}  All rights Nang Milan.
           </p>
         </div>
       </div>
