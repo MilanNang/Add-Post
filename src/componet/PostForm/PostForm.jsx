@@ -134,7 +134,7 @@ return (
             className="mb-4"
             {...register("status", { required: true })}
         />
-        <Button  type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-[80px] bg-[#99582a] text-black hover:bg-[#bc6c25]">
+        <Button  type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-[80px] bg-white text-black hover:bg-[#bc6c25]">
             {post ? "Update" : "Submit"}
         </Button>
     </div>
