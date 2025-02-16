@@ -50,11 +50,11 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button  className="mr-3 bg-sky-500 rounded-xl hover:bg-sky-700">
+                                <Button  className="mr-3 bg-[#7EC8E3] rounded-xl hover:bg-[#0000FF]">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button className='bg-red-500 rounded-xl hover:bg-red-700' onClick={deletePost}>
+                            <Button className='bg-[#F85C70] rounded-xl hover:bg-[#FF2511]' onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
