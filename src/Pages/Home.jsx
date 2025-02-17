@@ -29,7 +29,7 @@ useEffect(()=>{
                 <div className="flex flex-wrap">
                     <div className="p-2 w-full">
                         <h1 className="text-2xl font-bold hover:text-gray-500">
-                          Sign in to Show & Add Post  
+                         Sign In to Show & Add Post 
                         
                         </h1>
                     </div>
@@ -46,7 +46,7 @@ useEffect(()=>{
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
                             <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Add new Post
+                                Add New Post
                             
                             </h1>
                         </div>
