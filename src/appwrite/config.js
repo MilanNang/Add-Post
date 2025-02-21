@@ -145,6 +145,42 @@ export class Service{
             fileId
         )
     }
+    async likefile(fileId){
+        try{
+            this.bucket.getFilePreview(fileId,true);
+        }
+        catch(error){
+            console.log(error);
+            return false;
+            
+        }
+    }
+
+    async updateLikes(postId, userId, likedBy, isLiked) {
+        try {
+            // If the user is liking the post
+            if (isLiked) {
+                likedBy.push(userId); // Add user ID to likedBy array
+            } else {
+                likedBy = likedBy.filter(id => id !== userId); // Remove user ID if unliking
+            }
+    
+            const likes = likedBy.length; // Update like count
+    
+            return await this.databases.updateDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                postId,
+                {
+                    likes,
+                    likedBy,
+                }
+            );
+        } catch (error) {
+            console.log("Appwrite services :: updateLikes :: error", error);
+        }
+    }
+    
 
 
 }
