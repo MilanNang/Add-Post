@@ -15,7 +15,7 @@ function Logoutbtn() {
         })
     }
   return (
-    <button className=" h-[40px] inline-block px-6  duration-200 bg-gray-500 hover:bg-red-700 rounded-full" onClick={logoutHandler}>Logout</button>
+    <button className=" h-[40px] inline-block px-6  duration-200  hover:bg-red-700 rounded-full" onClick={logoutHandler}>Logout</button>
   )
 }
 

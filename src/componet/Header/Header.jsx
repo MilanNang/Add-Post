@@ -47,7 +47,7 @@ function Header() {
               ) : null
             )}
             {authStatus && (
-              <li>
+              <li className='rounded-4xl'>
                 <LogoutBtn />
               </li>
             )}
@@ -65,7 +65,7 @@ function Header() {
               ) : null
             )}
             {authStatus && (
-              <li>
+              <li className='bg-red-500 rounded-3xl'>
                 <LogoutBtn />
               </li>
             )}
