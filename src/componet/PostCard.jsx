@@ -14,7 +14,7 @@ function PostCard({ $id, title, featuredimage, content, showContent }) {
         <div className="w-full flex justify-center mb-3 sm:mb-4">
           <img src={appwriteService.getFilePreview(featuredimage)} className="rounded-xl w-full h-32 sm:h-auto object-cover" alt={title} />
         </div>
-        <h2 className="text-lg sm:text-2xl font-bold">{title}</h2>
+       <h2 className="text-[7px]  sm:text-2xl font-bold">{title}</h2>
         {showContent && (
           <p className="text-sm sm:text-base text-gray-700">{stripHTML(content)}</p>
         )}
