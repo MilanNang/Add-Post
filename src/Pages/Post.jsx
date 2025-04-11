@@ -1,4 +1,4 @@
-// Post.js
+
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate, Link } from 'react-router-dom';
@@ -63,10 +63,12 @@ export default function Post() {
                 <div className="flex flex-col items-center">
                     {post.featuredimage && (
                         <img 
-                            src={appwriteService.getFilePreview(post.featuredimage)} 
+                            src={appwriteService.getFileView(post.featuredimage)} 
                             alt={post.title} 
                             className="rounded-xl w-full max-w-[400px] mb-4"
-                        />
+                            
+                        ></img>
+                       
                     )}
                     <h1 className="text-xl font-bold text-center mt-2">{post.title}</h1>
                 </div>

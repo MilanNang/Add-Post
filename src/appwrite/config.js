@@ -38,7 +38,7 @@ export class Service{
         }
     }
 
-   //my code
+ 
 
     
     
@@ -101,6 +101,8 @@ export class Service{
 
     //file aplode services
     
+        
+    
     async uploadFile(file){
         try {   
              
@@ -108,29 +110,31 @@ export class Service{
                 conf.appwriteBucketId,
                 ID.unique(),
                 file,
-            
+                
+                
 
             )
-             const fileId=Response.$id
-             return fileId
+             
         }
         
         catch (error) {
             console.log("Appwrite servies :: uploadFile :: error",error);
             return false;
         }
-    }//mu code
-
+    }
     
     
 
     async deleteFile(fileId){
         try {
             
+            console.log(fileId);
              await this.bucket.deleteFile(
                 conf.appwriteBucketId,
                 fileId
+               
              )
+             console.log(fileId);
              return true
         } catch (error) {
             console.log("Appwrite servies :: deleteFile :: error",error);
@@ -138,16 +142,18 @@ export class Service{
         }
     }
     
-    getFilePreview(fileId){
+    getFileView(fileId){
         
-        return this.bucket.getFilePreview(
+        return this.bucket.getFileView(
             conf.appwriteBucketId,
             fileId
         )
+        
+        
     }
     async likefile(fileId){
         try{
-            this.bucket.getFilePreview(fileId,true);
+            this.bucket.getFileView(fileId,true);
         }
         catch(error){
             console.log(error);
@@ -176,6 +182,8 @@ export class Service{
 }
 
 const service=new Service();
-export default service //my code
+export default service 
+
+
 
 

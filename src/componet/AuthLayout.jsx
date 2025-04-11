@@ -8,7 +8,7 @@ export default function Protected({children,authentication=true}) {
         const navigate=useNavigate()
         const [loader,setLoader]=useState(true)
         const authStatus=useSelector(state=>state.auth.status)
-        console.log(authStatus,"auth")
+       
 
         useEffect(()=>{
             //let authValue=authState===true?true:false  this is a lete vertion of after code of if eles f code 
