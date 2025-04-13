@@ -26,7 +26,7 @@ A full-stack web application built with **React.js** for the frontend and **Appw
 ## 📁 Folder Structure (Frontend)
 
 
-*#.env :- 
+*#.env 
 VITE_APPWRITE_ENDPOINT=your_appwrite_endpoint
 VITE_APPWRITE_PROJECT_ID=your_project_id
 VITE_APPWRITE_DATABASE_ID=your_database_id
